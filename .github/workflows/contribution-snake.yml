@@ -1,0 +1,38 @@
+name: Contribution snake
+
+on:
+  schedule:
+    - cron: '23 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.repository == 'becko1602/becko1602'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # Immutable image digest published by Platane/snk v3's action.yml.
+      # This Docker action only receives the scoped, short-lived Actions token.
+      - name: Generate dark contribution snake
+        uses: docker://platane/snk@sha256:3a66a51ca8eaecc1e841bc8baae39bd88079e57419850d1ed005eee2bbfce940
+        with:
+          github_user_name: becko1602
+          github_token: ${{ github.token }}
+          outputs: |
+            dist/contribution-snake.svg?palette=github-dark&color_snake=#00E5FF&color_dots=#111827,#243448,#465078,#7953B4,#A855F7
+      - name: Require generated SVG
+        run: test -s dist/contribution-snake.svg
+      - name: Save reviewable animation
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: contribution-snake
+          path: dist/contribution-snake.svg
+          if-no-files-found: error
+          retention-days: 30

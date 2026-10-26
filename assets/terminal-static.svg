@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" role="img" aria-labelledby="title desc">
+<title id="title">Personal Linux terminal introduction</title><desc id="desc">Personal Linux terminal introduction. Behruzbek Bekchanov, Full-Stack Developer, Uzbekistan. Interests: Computer Engineering, AI, backend development and open source. Mission: turning ambitious ideas into real-world products.</desc>
+<defs><linearGradient id="accent" x2="1" y2="1"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#A855F7"/></linearGradient><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#94A3B8" stroke-opacity=".055"/></pattern></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#E6EDF3}.mono{font-family:monospace;fill:#94A3B8}.muted{fill:#94A3B8}.line0{opacity:1}.line1,.line2,.line3,.line4{opacity:0}</style>
+<rect x="1" y="1" width="998" height="328" rx="16" fill="#111827" stroke="#263347"/><path d="M1 49h998" stroke="#263347"/>
+<circle cx="26" cy="25" r="5" fill="#00E5FF" opacity=".7"/><circle cx="46" cy="25" r="5" fill="#A855F7" opacity=".7"/><circle cx="66" cy="25" r="5" fill="#94A3B8" opacity=".4"/>
+<text x="500" y="30" text-anchor="middle" class="mono" font-size="12">behruzbek — personal workspace</text>
+<g font-size="16" class="mono"><text x="28" y="86" style="fill:#00E5FF">behruzbek@archlinux:~$ whoami</text><text x="28" y="116">&gt; Behruzbek Bekchanov · Full-Stack Developer · Uzbekistan</text>
+<text x="28" y="162" style="fill:#00E5FF">behruzbek@archlinux:~$ cat interests.txt</text><text x="28" y="192">&gt; Computer Engineering / AI / Backend Development / Open Source</text>
+<text x="28" y="238" style="fill:#00E5FF">behruzbek@archlinux:~$ echo $MISSION</text><text x="28" y="268">&gt; Turning ambitious ideas into real-world products.</text></g>
+<rect class="cursor" x="28" y="292" width="9" height="15" fill="#39FF88"/>
+</svg>

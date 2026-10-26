@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270" role="img" aria-labelledby="title desc">
+<title id="title">AIFU HACKATHON</title><desc id="desc">AIFU HACKATHON. Team selection. Selected among the Top 10 teams. Ambitious ideas. Collaborative building.</desc>
+<defs><linearGradient id="accent" x2="1" y2="1"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#A855F7"/></linearGradient><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#94A3B8" stroke-opacity=".055"/></pattern></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#E6EDF3}.mono{font-family:monospace;fill:#94A3B8}.muted{fill:#94A3B8}@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<rect x="1" y="1" width="478" height="268" rx="16" fill="#111827" stroke="#263347"/><path d="M28 1h100" stroke="#A855F7" stroke-width="2"/>
+<text x="28" y="48" font-size="12" letter-spacing="2" style="fill:#A855F7">RECOGNITION / 10</text>
+<g transform="translate(410 25)" stroke="#A855F7" fill="none" stroke-width="2"><path d="M0 0h20v12a10 10 0 0 1-20 0zM0 3h-6v5q0 8 9 8m17-13h6v5q0 8-9 8M10 22v9m-7 0h14"/></g>
+<text x="28" y="94" font-size="26" font-weight="700">AIFU HACKATHON</text><text x="28" y="123" font-size="15" class="muted">Team selection</text><text x="28" y="174" font-size="16" class="muted">Selected among the Top 10 teams.</text><text x="28" y="200" font-size="16" class="muted">Ambitious ideas. Collaborative building.</text></svg>
