@@ -24,7 +24,7 @@ jobs:
           github_user_name: becko1602
           github_token: ${{ github.token }}
           outputs: |
-            dist/contribution-snake.svg?palette=github-dark&color_snake=#00E5FF&color_dots=#111827,#243448,#465078,#7953B4,#A855F7
+            dist/contribution-snake.svg?palette=github-dark&color_snake=#397E65&color_dots=#142027,#1C3C33,#285A48,#344E7A,#634888
       - name: Require generated SVG
         run: test -s dist/contribution-snake.svg
       - name: Save reviewable animation

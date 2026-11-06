@@ -1,0 +1,1 @@
+Brand icons: https://github.com/simple-icons/simple-icons (CC0 project; trademarks belong to their owners). Icons are vendored locally; workflows require no icon service. Downloaded 2026-11-06. LinkedIn may be unavailable in current Simple Icons releases; use a text monogram instead.

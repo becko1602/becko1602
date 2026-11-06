@@ -1,20 +1,20 @@
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-static.svg">
-  <img src="assets/hero.svg" width="100%" alt="Behruzbek Bekchanov — Full-Stack Developer from Uzbekistan. BECKO system online; decorative snake reveals BECKO.">
+  <img src="assets/hero.svg" width="100%" alt="Behruzbek Bekchanov — Full-Stack Developer from Uzbekistan. BECKO system online; smooth single-color snake reveals BECKO.">
 </picture>
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/roles-static.svg">
-  <img src="assets/roles.svg" width="100%" alt="Full-Stack Developer · AI and Automation Builder · Linux Enthusiast · Hackathon Participant · Future Computer Engineer · Aspiring KAIST Student">
+  <img src="assets/roles.svg" width="100%" alt="Full-Stack Developer · AI and Automation Builder · Linux Enthusiast · Hackathon Participant · Future Computer Engineer">
 </picture>
 
 <p align="center">
-<a href="#about">About</a> · <a href="#projects">Projects</a> · <a href="#experiences">Experiences</a> · <a href="#kaist">KAIST journey</a> · <a href="#activity">Activity</a> · <a href="#connect">Connect</a>
+<a href="#about">About</a> · <a href="#projects">Projects</a> · <a href="#experiences">Experiences</a> · <a href="#activity">Activity</a> · <a href="#connect">Connect</a>
 </p>
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/becko-neon-static.svg">
-  <img src="assets/becko-neon.svg" width="100%" alt="BECKO contribution-square artwork: brightness samples actual GitHub activity; decorative layout, not a statistical graph.">
+  <img src="assets/becko-neon.svg" width="100%" alt="BECKO contribution signature with a smooth dark RGB sweep and actual activity-based brightness.">
 </picture>
 
 <a id="about"></a>
@@ -34,8 +34,10 @@ My long-term ambition is to gain international experience and build impactful te
 ## 02 / Development toolkit
 
 <picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="assets/tech-stack-mobile-static.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/tech-stack-static.svg">
-  <img src="assets/tech-stack.svg" width="100%" alt="Frontend: React, Next.js, JavaScript, TypeScript, HTML, CSS, Tailwind. Backend: Node.js, Python, FastAPI, REST APIs. Tools: Arch, Hyprland, Git, GitHub, VS Code, terminal, Docker. AI: LLMs, Telegram, automation, voice assistants.">
+  <source media="(max-width: 600px)" srcset="assets/tech-stack-mobile.svg">
+  <img src="assets/tech-stack.svg" width="100%" alt="Official technology logos — Frontend: React, Next.js, JavaScript, TypeScript, HTML, CSS, Tailwind. Backend: Node.js, Python, FastAPI, REST APIs. Tools: Arch, Hyprland, Git, GitHub, VS Code, terminal, Docker. AI: LLMs, Telegram, automation, voice assistants.">
 </picture>
 
 These are technologies I use or explore across public and local projects, rather than claims of advanced mastery. Next.js is evidenced in local OLYMPIX and Smart Market Prices work; FastAPI and Docker¹ are evidenced in the local UZEX Intelligence workspace.
@@ -135,31 +137,17 @@ The original profile records the team results below. Other participation entries
 
 </details>
 
-<a id="kaist"></a>
-## 05 / MY JOURNEY TO KAIST
-
-**Korea Advanced Institute of Science and Technology** is a personal academic destination. My interests are Computer Science, Software Engineering, Artificial Intelligence, and Computer Engineering.
-
-My self-reported GPA is **approximately 4.6/5.0**. I'm strengthening Mathematics and Computer Science, preparing for IELTS, and working toward a **SAT target of 1500+**. International study and a scholarship are goals; no test results, admission offer or scholarship are claimed.
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/kaist-roadmap-static.svg">
-  <img src="assets/kaist-roadmap.svg" width="100%" alt="KAIST personal roadmap: academics, English, SAT, projects, achievements, recommendations, essays, official requirements, application. Goals are not completion claims.">
-</picture>
-
-The roadmap does not state current admissions requirements. I will check KAIST's official guidance when preparing an application.
-
 <a id="activity"></a>
-## 06 / Activity, without invented numbers
+## 05 / GitHub activity
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/activity-static.svg">
   <img src="assets/activity.svg" width="100%" alt="Actual GitHub public repository count, contribution calendar, commit contributions and source-byte language distribution. Timestamp and date window shown inside the graphic.">
 </picture>
 
-The dashboard refreshes daily from GitHub REST and GraphQL. Language percentages measure tracked source bytes across non-fork public repositories, not proficiency. API failures preserve the last successful snapshot and fail the workflow visibly. No unreliable streak is displayed.
+Updated daily from GitHub. Language percentages reflect source bytes in public non-fork repositories.
 
-[View the native GitHub contribution graph ↗](https://github.com/becko1602?tab=overview). It remains in GitHub's normal profile layout; README artwork does not recolor or move it.
+[View the native GitHub contribution graph ↗](https://github.com/becko1602?tab=overview).
 
 ### Contribution snake
 
@@ -168,18 +156,17 @@ The dashboard refreshes daily from GitHub REST and GraphQL. Language percentages
   <img src="assets/contribution-snake.svg" width="100%" alt="Traditional decorative snake moving across the authentic contribution calendar; static fallback shows the same calendar.">
 </picture>
 
-This is a decorative animation. The custom snake-to-apple BECKO reveal is integrated into the right side of the hero above.
+A smooth decorative snake in forest, indigo and violet. The BECKO reveal lives in the hero above.
 
 <a id="connect"></a>
-## 07 / Signal channels
+## 06 / Signal channels
 
-<a href="https://github.com/becko1602"><img src="assets/social-github.svg" width="180" alt="GitHub — connect with Behruzbek Bekchanov"></a>
-<a href="https://t.me/becko1602"><img src="assets/social-telegram.svg" width="180" alt="Telegram — connect with Behruzbek Bekchanov"></a>
-<a href="https://www.instagram.com/becko_1602/"><img src="assets/social-instagram.svg" width="180" alt="Instagram — connect with Behruzbek Bekchanov"></a>
-<a href="https://www.linkedin.com/in/behruzbek-bekchanov-7a4b962b7/"><img src="assets/social-linkedin.svg" width="180" alt="LinkedIn — connect with Behruzbek Bekchanov"></a>
-<a href="https://www.youtube.com/@becko_1602"><img src="assets/social-youtube.svg" width="180" alt="YouTube — connect with Behruzbek Bekchanov"></a>
+<a href="https://github.com/becko1602"><img src="assets/social-github.svg" width="145" alt="GitHub — connect with Behruzbek Bekchanov"></a>
+<a href="https://t.me/becko1602"><img src="assets/social-telegram.svg" width="145" alt="Telegram — connect with Behruzbek Bekchanov"></a>
+<a href="https://www.instagram.com/becko_1602/"><img src="assets/social-instagram.svg" width="145" alt="Instagram — connect with Behruzbek Bekchanov"></a>
+<a href="https://www.linkedin.com/in/behruzbek-bekchanov-7a4b962b7/"><img src="assets/social-linkedin.svg" width="145" alt="LinkedIn — connect with Behruzbek Bekchanov"></a>
+<a href="https://www.youtube.com/@becko_1602"><img src="assets/social-youtube.svg" width="145" alt="YouTube — connect with Behruzbek Bekchanov"></a>
 
-Codeforces: profile URL not yet supplied.
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/footer-static.svg">

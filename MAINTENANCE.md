@@ -6,7 +6,7 @@ The daily workflow uses only the built-in short-lived Actions token. It needs co
 
 A failed API refresh fails before replacing the previous snapshot. The workflow never commits a partial refresh if a later generation or validation step fails. Timestamped images make staleness visible. GitHub image caches can delay visible changes.
 
-The native profile graph is controlled by GitHub. The BECKO letter artwork samples sequential days from the most recent 90 calendar days and normalizes brightness by the maximum daily count; it is explicitly decorative. The activity dashboard uses exact calendar positions. Commit contributions are the GraphQL collection total, not all historical commits. Language percentages aggregate source bytes from public non-fork repositories.
+The native profile graph is controlled by GitHub. The BECKO letter artwork samples sequential days from the most recent 81 calendar days and normalizes brightness using the square root of the ratio to the maximum daily count; it is explicitly decorative. The activity dashboard uses exact calendar positions. Commit contributions are the GraphQL collection total, not all historical commits. Language percentages aggregate source bytes from public non-fork repositories.
 
 All animated image references have reduced-motion picture sources. SVGs also include a reduced-motion media query where applicable. GitHub sanitization/proxy/browser behavior can vary; README content has no JavaScript. Verify animation in a browser after publishing and use static assets if a client cannot animate SVG.
 
@@ -15,3 +15,5 @@ Audit: six public repositories were returned on 2026-11-06: becko1602, eDoska, B
 Public project sources: eDoska package manifest and source tree; Becko README and actions tree; becko-arch-linux pyproject and source. Local evidence: prep-platform, smartprice-ai and uzex-intelligence documentation and manifests. Local implementations are not advertised as public repositories or verified live deployments. FALCON remains a supplied concept.
 
 Missing evidence: Codeforces URL, regional informatics result, individual event dates/certificates, public links for local projects. Social URLs are explicitly supplied by the author. The earlier Telegram handle is superseded by @becko1602. No KAIST requirements or test results are asserted.
+
+Visual update: dark forest, indigo and violet cycle, with no red in the current generated design. KAIST content removed at the author’s request. Snake uses a dash on a continuous rounded path, so its entire body follows curves and uses one synchronized color. The BECKO signature stays readable and uses a single soft sweep rather than per-square flicker. Official Simple Icons paths are vendored under assets/icons and embedded in generated assets.
