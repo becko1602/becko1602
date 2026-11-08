@@ -29,6 +29,10 @@ assert json.loads((R/'data/activity.json').read_text())['collection']['contribut
 print(f'PASS: {len(assets)} valid SVGs, local image references, static fallbacks, pinned actions and credential scan.')
 
 assert 'kaist' not in readme.lower()
-for name in ['hero','becko-neon','contribution-snake','tech-stack']:
+for name in ['hero','tech-stack']:
     assert not re.search(r'#(?:FF1744|B90027|00BFFF)',(R/f'assets/{name}.svg').read_text(),re.I)
 print('PASS: KAIST removed; updated artwork uses the new palette.')
+
+assert "snake" not in readme.lower()
+assert all(word in readme for word in ["About Me", "Tech Stack", "GitHub Stats", "Hackathon Highlights", "Dev Quote"])
+print("PASS: reference-style sections and snake-free README.")

@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" role="img"><title>Connect on LinkedIn</title><desc>Connect on LinkedIn</desc><defs><linearGradient id="rgb"><stop class="s0"/><stop offset=".5" class="s1"/><stop offset="1" class="s2"/></linearGradient><linearGradient id="shine"><stop stop-color="#A7CABB" stop-opacity="0"/><stop offset=".5" stop-color="#A7CABB" stop-opacity=".7"/><stop offset="1" stop-color="#A7CABB" stop-opacity="0"/></linearGradient><radialGradient id="glow"><stop stop-color="#173D31" stop-opacity=".45"/><stop offset="1" stop-color="#050709" stop-opacity="0"/></radialGradient></defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#EDF1F5}.mono{font-family:monospace;fill:#8795A8}.accent{fill:#70A18C}.muted{fill:#9CA9B9}.s0{stop-color:#25634B}.s1{stop-color:#294E85}.s2{stop-color:#653F8F}.snake{stroke:#397E65}.logo{fill:#80B5A0}
-@keyframes hue0{0%,100%{stop-color:#25634B}33%{stop-color:#294E85}66%{stop-color:#653F8F}}
-@keyframes hue1{0%,100%{stop-color:#294E85}33%{stop-color:#653F8F}66%{stop-color:#25634B}}
-@keyframes hue2{0%,100%{stop-color:#653F8F}33%{stop-color:#25634B}66%{stop-color:#294E85}}
-@keyframes accent{0%,100%{fill:#70A18C}33%{fill:#7899C8}66%{fill:#AA8AC7}}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" role="img"><title>Connect on LinkedIn</title><desc>Connect on LinkedIn</desc><defs><linearGradient id="rgb"><stop class="s0"/><stop offset=".5" class="s1"/><stop offset="1" class="s2"/></linearGradient><linearGradient id="shine"><stop stop-color="#A7CABB" stop-opacity="0"/><stop offset=".5" stop-color="#A7CABB" stop-opacity=".7"/><stop offset="1" stop-color="#A7CABB" stop-opacity="0"/></linearGradient><radialGradient id="glow"><stop stop-color="#173D31" stop-opacity=".45"/><stop offset="1" stop-color="#090B16" stop-opacity="0"/></radialGradient></defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#EDF1F5}.mono{font-family:monospace;fill:#8795A8}.accent{fill:#35E8EF}.muted{fill:#9CA9B9}.s0{stop-color:#00D9E8}.s1{stop-color:#6957FF}.s2{stop-color:#F34EC4}.snake{stroke:#397E65}.logo{fill:#35E8EF}
+@keyframes hue0{0%,100%{stop-color:#00D9E8}33%{stop-color:#6957FF}66%{stop-color:#F34EC4}}
+@keyframes hue1{0%,100%{stop-color:#6957FF}33%{stop-color:#F34EC4}66%{stop-color:#00D9E8}}
+@keyframes hue2{0%,100%{stop-color:#F34EC4}33%{stop-color:#00D9E8}66%{stop-color:#6957FF}}
+@keyframes accent{0%,100%{fill:#35E8EF}33%{fill:#7899C8}66%{fill:#AA8AC7}}
 @keyframes snakeColor{0%,100%{stroke:#397E65}33%{stroke:#3C629C}66%{stroke:#7852A0}}
 @keyframes breathe{0%,100%{opacity:.7}50%{opacity:1}}
 @keyframes scan{0%,10%{transform:translateX(-1200px)}85%,100%{transform:translateX(1200px)}}
@@ -13,4 +13,4 @@
 .s0{animation:hue0 24s ease-in-out infinite}.s1{animation:hue1 24s ease-in-out infinite}.s2{animation:hue2 24s ease-in-out infinite}
 .accent,.logo{animation:accent 24s ease-in-out infinite}.snake{animation:snakeColor 24s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}.beam{display:none}.trail{stroke-dashoffset:0!important;opacity:1!important}}
-</style><rect width="240" height="70" rx="20" fill="#050709"/><rect x="1" y="1" width="238" height="68" rx="20" fill="none" stroke="url(#rgb)" stroke-opacity=".8"/><rect x="1" y="1" width="238" height="68" rx="16" fill="#0A1119" stroke="#1D2C39"/><text x="18" y="41.75" font-size="15.0" class="accent" >LI</text><text x="60" y="44" font-size="22" class="" >LinkedIn</text></svg>
+</style><rect width="240" height="70" rx="20" fill="#090B16"/><rect x="1" y="1" width="238" height="68" rx="20" fill="none" stroke="url(#rgb)" stroke-opacity=".8"/><rect x="1" y="1" width="238" height="68" rx="16" fill="#101426" stroke="#1D2C39"/><text x="18" y="41.75" font-size="15.0" class="accent" >LI</text><text x="60" y="44" font-size="22" class="" >LinkedIn</text></svg>

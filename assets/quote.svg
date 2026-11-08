@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 132" role="img"><title>Developer quote — Linus Torvalds</title><desc>Developer quote — Linus Torvalds</desc><defs><linearGradient id="rgb"><stop class="s0"/><stop offset=".5" class="s1"/><stop offset="1" class="s2"/></linearGradient><linearGradient id="shine"><stop stop-color="#A7CABB" stop-opacity="0"/><stop offset=".5" stop-color="#A7CABB" stop-opacity=".7"/><stop offset="1" stop-color="#A7CABB" stop-opacity="0"/></linearGradient><radialGradient id="glow"><stop stop-color="#173D31" stop-opacity=".45"/><stop offset="1" stop-color="#090B16" stop-opacity="0"/></radialGradient></defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#EDF1F5}.mono{font-family:monospace;fill:#8795A8}.accent{fill:#35E8EF}.muted{fill:#9CA9B9}.s0{stop-color:#00D9E8}.s1{stop-color:#6957FF}.s2{stop-color:#F34EC4}.snake{stroke:#397E65}.logo{fill:#35E8EF}
+@keyframes hue0{0%,100%{stop-color:#00D9E8}33%{stop-color:#6957FF}66%{stop-color:#F34EC4}}
+@keyframes hue1{0%,100%{stop-color:#6957FF}33%{stop-color:#F34EC4}66%{stop-color:#00D9E8}}
+@keyframes hue2{0%,100%{stop-color:#F34EC4}33%{stop-color:#00D9E8}66%{stop-color:#6957FF}}
+@keyframes accent{0%,100%{fill:#35E8EF}33%{fill:#7899C8}66%{fill:#AA8AC7}}
+@keyframes snakeColor{0%,100%{stroke:#397E65}33%{stroke:#3C629C}66%{stroke:#7852A0}}
+@keyframes breathe{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes scan{0%,10%{transform:translateX(-1200px)}85%,100%{transform:translateX(1200px)}}
+@keyframes energy{to{stroke-dashoffset:-180}}
+@keyframes travel{0%{stroke-dashoffset:65;opacity:0}3%{opacity:1}94%{opacity:1}100%{stroke-dashoffset:-1000;opacity:0}}
+@keyframes draw{0%,25%{stroke-dashoffset:1;opacity:0}32%{opacity:.9}78%,92%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes apple{0%,24%{opacity:1}30%,100%{opacity:0}}
+.s0{animation:hue0 24s ease-in-out infinite}.s1{animation:hue1 24s ease-in-out infinite}.s2{animation:hue2 24s ease-in-out infinite}
+.accent,.logo{animation:accent 24s ease-in-out infinite}.snake{animation:snakeColor 24s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.beam{display:none}.trail{stroke-dashoffset:0!important;opacity:1!important}}
+</style><rect width="1200" height="132" rx="20" fill="#090B16"/><rect x="1" y="1" width="1198" height="130" rx="20" fill="none" stroke="url(#rgb)" stroke-opacity=".8"/><text x="36" y="56" font-size="30" class="accent" >“Talk is cheap. Show me the code.”</text><text x="1164" y="101" font-size="19" class="muted" text-anchor="end">— Linus Torvalds</text></svg>

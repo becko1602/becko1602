@@ -1,15 +1,15 @@
-"""Local SVG design system: restrained forest / indigo / violet, no external widgets."""
+"""Self-contained cyberpunk SVG cards with authentic GitHub data."""
 from pathlib import Path
 from html import escape as esc
 import re, math, xml.etree.ElementTree as ET
 R=Path(__file__).resolve().parents[1]
 A=R/'assets'
-BASE='text{font-family:Arial,Helvetica,sans-serif;fill:#EDF1F5}.mono{font-family:monospace;fill:#8795A8}.accent{fill:#70A18C}.muted{fill:#9CA9B9}.s0{stop-color:#25634B}.s1{stop-color:#294E85}.s2{stop-color:#653F8F}.snake{stroke:#397E65}.logo{fill:#80B5A0}'
+BASE='text{font-family:Arial,Helvetica,sans-serif;fill:#EDF1F5}.mono{font-family:monospace;fill:#8795A8}.accent{fill:#35E8EF}.muted{fill:#9CA9B9}.s0{stop-color:#00D9E8}.s1{stop-color:#6957FF}.s2{stop-color:#F34EC4}.snake{stroke:#397E65}.logo{fill:#35E8EF}'
 MOTION='''
-@keyframes hue0{0%,100%{stop-color:#25634B}33%{stop-color:#294E85}66%{stop-color:#653F8F}}
-@keyframes hue1{0%,100%{stop-color:#294E85}33%{stop-color:#653F8F}66%{stop-color:#25634B}}
-@keyframes hue2{0%,100%{stop-color:#653F8F}33%{stop-color:#25634B}66%{stop-color:#294E85}}
-@keyframes accent{0%,100%{fill:#70A18C}33%{fill:#7899C8}66%{fill:#AA8AC7}}
+@keyframes hue0{0%,100%{stop-color:#00D9E8}33%{stop-color:#6957FF}66%{stop-color:#F34EC4}}
+@keyframes hue1{0%,100%{stop-color:#6957FF}33%{stop-color:#F34EC4}66%{stop-color:#00D9E8}}
+@keyframes hue2{0%,100%{stop-color:#F34EC4}33%{stop-color:#00D9E8}66%{stop-color:#6957FF}}
+@keyframes accent{0%,100%{fill:#35E8EF}33%{fill:#7899C8}66%{fill:#AA8AC7}}
 @keyframes snakeColor{0%,100%{stroke:#397E65}33%{stroke:#3C629C}66%{stroke:#7852A0}}
 @keyframes breathe{0%,100%{opacity:.7}50%{opacity:1}}
 @keyframes scan{0%,10%{transform:translateX(-1200px)}85%,100%{transform:translateX(1200px)}}
@@ -25,7 +25,7 @@ FONT={'B':['11110','10001','10001','11110','10001','10001','11110'],'E':['11111'
 WORD='M0 0V-50H25Q45 -50 45 -37Q45 -25 25 -25H0H28Q48 -25 48 -12Q48 0 28 0Z M72 0V-50H115 M72 -25H108 M72 0H115 M185 -45Q140 -68 140 -25Q140 15 185 -5 M210 0V-50 M210 -25L250 -50 M210 -25L250 0 M280 -25Q280 -50 303 -50Q326 -50 326 -25Q326 0 303 0Q280 0 280 -25'
 def text(x,y,value,size=20,cls='',extra=''):
     return f'<text x="{x}" y="{y}" font-size="{size}" class="{cls}" {extra}>{esc(str(value))}</text>'
-def panel(x,y,w,h):return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="16" fill="#0A1119" stroke="#1D2C39"/>'
+def panel(x,y,w,h):return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="16" fill="#101426" stroke="#1D2C39"/>'
 def logo(slug,x,y,size=32):
     p=A/'icons'/f'{slug}.svg'
     if not p.exists():return text(x,y+size*.75,slug[:2].upper(),size*.6,'accent')
@@ -34,47 +34,15 @@ def logo(slug,x,y,size=32):
     return f'<g transform="translate({x} {y}) scale({size/24})" class="logo">{paths}</g>'
 def save(name,height,body,title,desc=None,width=1200):
     head=f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img"><title>{esc(title)}</title><desc>{esc(desc or title)}</desc>'
-    defs='<defs><linearGradient id="rgb"><stop class="s0"/><stop offset=".5" class="s1"/><stop offset="1" class="s2"/></linearGradient><linearGradient id="shine"><stop stop-color="#A7CABB" stop-opacity="0"/><stop offset=".5" stop-color="#A7CABB" stop-opacity=".7"/><stop offset="1" stop-color="#A7CABB" stop-opacity="0"/></linearGradient><radialGradient id="glow"><stop stop-color="#173D31" stop-opacity=".45"/><stop offset="1" stop-color="#050709" stop-opacity="0"/></radialGradient></defs>'
-    frame=f'<rect width="{width}" height="{height}" rx="20" fill="#050709"/><rect x="1" y="1" width="{width-2}" height="{height-2}" rx="20" fill="none" stroke="url(#rgb)" stroke-opacity=".8"/>'
+    defs='<defs><linearGradient id="rgb"><stop class="s0"/><stop offset=".5" class="s1"/><stop offset="1" class="s2"/></linearGradient><linearGradient id="shine"><stop stop-color="#A7CABB" stop-opacity="0"/><stop offset=".5" stop-color="#A7CABB" stop-opacity=".7"/><stop offset="1" stop-color="#A7CABB" stop-opacity="0"/></linearGradient><radialGradient id="glow"><stop stop-color="#173D31" stop-opacity=".45"/><stop offset="1" stop-color="#090B16" stop-opacity="0"/></radialGradient></defs>'
+    frame=f'<rect width="{width}" height="{height}" rx="20" fill="#090B16"/><rect x="1" y="1" width="{width-2}" height="{height-2}" rx="20" fill="none" stroke="url(#rgb)" stroke-opacity=".8"/>'
     (A/f'{name}.svg').write_text(head+defs+'<style>'+BASE+MOTION+'</style>'+frame+body+'</svg>')
     static=re.sub(r'<style>.*?</style>','',body,flags=re.S)
     static=re.sub(r' style="[^"]*"','',static)
     static=re.sub(r'<rect[^>]*class="beam"[^>]*/>','',static)
     (A/f'{name}-static.svg').write_text(head+defs+'<style>'+BASE+'</style>'+frame+static+'</svg>')
-def moving_snake(path,duration='28s',width=10,length=65):
-    # A moving dash is a flexible body, so bends never rotate a rigid rectangle.
-    return f'<path class="snake" d="{path}" pathLength="1000" fill="none" stroke-width="{width}" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="{length} 1100" stroke-dashoffset="-440" style="animation:travel {duration} linear infinite,snakeColor 24s ease-in-out infinite"/>'
-def snake_art(x,y,scale=1):
-    # Continuous bezier route: enter from right, reach apple, curve into final O.
-    route='M360 -105H40Q-8 -105 -8 -75Q-8 -55 30 -55H250Q305 -55 305 -25Q305 5 280 5'
-    return f'<g transform="translate({x} {y}) scale({scale})"><path d="{WORD}" fill="none" stroke="#182A31" stroke-width="7"/><path class="trail" d="{WORD}" pathLength="1" fill="none" stroke="url(#rgb)" stroke-width="5" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:0;animation:draw 18s ease-in-out infinite"/><g style="animation:apple 18s linear infinite"><path d="M-16 -77Q-18 -89 -8 -85Q4 -90 2 -77Q-1 -65 -8 -69Q-14 -66 -16 -77" fill="#5A906D"/><path d="M-8 -86Q-6 -96 2 -94" fill="none" stroke="#9ABD9D" stroke-width="3"/></g>'+moving_snake(route,'18s',8)+'</g>'
 def generate(d):
     c=d['collection'];cal=c['contributionCalendar'];weeks=cal['weeks'];days=[day for w in weeks for day in w['contributionDays']]
-    hero='<ellipse cx="270" cy="170" rx="530" ry="320" fill="url(#glow)"/>'
-    for y in [62,300,330]:hero+=f'<path d="M700 {y}H780l28 -18H1160" fill="none" stroke="url(#rgb)" opacity=".35"/>'
-    hero+='<path d="M32 345H720l40 -26H1160" fill="none" stroke="url(#rgb)" stroke-dasharray="14 76" style="animation:energy 14s linear infinite"/>'
-    hero+=text(38,42,'BECKO.DEV / DIGITAL IDENTITY',16,'mono')+text(38,112,'BEHRUZBEK',48,extra='font-weight="800" letter-spacing="2"')+text(38,169,'BEKCHANOV',48,extra='font-weight="800" letter-spacing="2"')+text(38,211,'FULL-STACK DEVELOPER',22,'accent','letter-spacing="3"')+text(38,251,'From Uzbekistan. Building ambitious ideas',19,'muted')+text(38,278,'into real-world products.',19,'muted')
-    hero+='<circle cx="44" cy="315" r="4" class="accent"/>'+text(58,320,'BECKO SYSTEM ONLINE',13,'mono')+text(805,90,'01 / SIGNAL IN MOTION',13,'mono')+snake_art(805,245,.94)+text(805,287,'DEVELOPER. BUILDER. INNOVATOR.',12,'mono')
-    save('hero',365,hero,'Behruzbek Bekchanov — Full-Stack Developer','Dark forest, indigo and violet interface. A smooth single-color snake approaches an apple and reveals BECKO.')
-    roles=['Full-Stack Developer','AI & Automation Builder','Linux Enthusiast','Hackathon Participant','Future Computer Engineer']
-    body=text(32,45,'$ becko --identity',18,'accent')
-    for i,role in enumerate(roles):
-        lo=i*20;hi=(i+1)*20
-        body+=f'<style>@keyframes role{i}{{0%,100%{{opacity:0}}{lo+.01}%,{hi-.01}%{{opacity:1}}}}</style>'+text(340,45,role,21,extra=f'style="opacity:{int(i==0)};animation:role{i} 25s linear infinite"')
-    save('roles',78,body,'Full-stack · AI · Linux · Hackathons · Computer Engineering')
-    save('identity',90,text(32,40,'FULL-STACK / AI / LINUX',24)+text(32,68,'Hackathon participant · Future Computer Engineer',18,'muted'),'Identity and interests')
-    (A/'roles-static.svg').write_text((A/'identity-static.svg').read_text())
-    squares='';lit='';index=0;peak=max(1,max(day['contributionCount'] for day in days));sample=days[-81:]
-    for li,ch in enumerate('BECKO'):
-        for row,line in enumerate(FONT[ch]):
-            for col,on in enumerate(line):
-                if on=='0':continue
-                day=sample[index%len(sample)];bright=.48+.52*math.sqrt(day['contributionCount']/peak)
-                shape=f'<rect x="{72+li*218+col*33}" y="{76+row*30}" width="27" height="24" rx="5"'
-                squares+=shape+f' fill="url(#rgb)" fill-opacity="{bright:.3f}"><title>{day["date"]}: {day["contributionCount"]} contributions (artistic intensity)</title></rect>'
-                lit+=shape+'/>';index+=1
-    body=text(34,38,'BECKO / LIVING CONTRIBUTION SIGNATURE',15,'mono')+f'<defs><clipPath id="letters">{lit}</clipPath></defs><g style="animation:breathe 9s ease-in-out infinite">{squares}</g><g clip-path="url(#letters)"><rect class="beam" x="0" y="70" width="390" height="220" fill="url(#shine)" style="animation:scan 12s ease-in-out infinite"/></g>'+text(34,320,'Real daily activity shapes the light / a signature, not a calendar.',16,'mono')
-    save('becko-neon',348,body,'BECKO contribution signature','Always-readable contribution squares, a slow light sweep and dark RGB color cycle. Brightness samples actual recent activity; no flicker.')
     body=panel(24,24,1152,312)+text(48,58,'becko@arch ~ / terminal',16,'mono')
     cmds=[('whoami','Behruzbek Bekchanov / Uzbekistan'),('cat interests.txt','Full-stack · AI · Cybersecurity · Computer Engineering'),('ls ~/projects','eDoska/  Becko/  becko-arch-linux/'),('echo $MISSION','Build impactful products and opportunities in Uzbekistan.'),('neofetch','Arch Linux / Hyprland / terminal-driven workflow')]
     for i,(cmd,out) in enumerate(cmds):
@@ -115,19 +83,43 @@ def generate(d):
     for i,(lang,num) in enumerate(langs[:5]):body+=logo(slugs.get(lang,lang.lower()),32+i*230,389,24)+text(65+i*230,409,f'{lang} {num/total:.1%}',17,'accent')
     body+=text(32,450,'Updated '+d['updated']+' / GitHub REST + GraphQL',14,'mono')
     save('activity',478,body,'Real GitHub activity dashboard','Actual contribution calendar, public repositories, commit contributions and programming-language source bytes.')
-    # Wide horizontal passes with rounded U-turns; no abrupt column-by-column zigzag.
-    grid=text(32,36,'CONTRIBUTION SNAKE / smooth traversal, real daily activity',16,'mono')
-    for wi,week in enumerate(weeks):
-        for di,day in enumerate(week['contributionDays']):
-            grid+=f'<rect x="{40+wi*21}" y="{65+di*24}" width="16" height="16" rx="3" fill="{colors[min(4,day["contributionCount"])]}"><title>{day["date"]}: {day["contributionCount"]} contributions</title></rect>'
-    left=48;right=48+(len(weeks)-1)*21;route=f'M{left} 73'
-    for row in range(7):
-        y=73+row*24
-        route+=f'H{right if row%2==0 else left}'
-        if row<6:route+=f'Q{right+12 if row%2==0 else left-12} {y} {right+12 if row%2==0 else left-12} {y+12}Q{right+12 if row%2==0 else left-12} {y+24} {right if row%2==0 else left} {y+24}'
-    grid+=moving_snake(route,'48s',10,11)+text(32,262,'Daily activity / '+d['updated'],14,'mono')
-    save('contribution-snake',292,grid,'Contribution snake','A flexible single-color snake follows smooth horizontal lanes and rounded turns over the authentic calendar. Forest, blue and violet colors cycle slowly.')
-    save('becko-snake',235,text(32,36,'BECKO / SIGNAL IN MOTION',15,'mono')+snake_art(350,182,1.5),'Decorative BECKO snake')
     for slug,label in [('github','GitHub'),('telegram','Telegram'),('instagram','Instagram'),('linkedin','LinkedIn'),('youtube','YouTube')]:
         save('social-'+slug,70,panel(1,1,238,68)+logo(slug,18,23,25)+text(60,44,label,22),'Connect on '+label,width=240)
     save('footer',95,text(32,44,'BECKO.DEV',25,'accent')+text(32,74,'Developer. Builder. Innovator. / Uzbekistan → the world',18,'mono'),'BECKO — Developer. Builder. Innovator.')
+
+
+_original_generate = generate
+def generate(d):
+    _original_generate(d)
+    # Angular polygon lettering drawn locally; no external font dependency.
+    glyphs={
+      'B':'M0 0H60L80 20V43L69 54L80 65V88L60 108H0Z M24 22V43H51L57 37V28L51 22Z M24 65V86H51L57 80V71L51 65Z',
+      'E':'M0 0H80V23H25V42H68V65H25V85H80V108H0Z',
+      'C':'M20 0H80V25H30L25 30V78L30 83H80V108H20L0 88V20Z',
+      'K':'M0 0H25V43L60 0H88L45 53L88 108H58L25 67V108H0Z',
+      'O':'M20 0H64L84 20V88L64 108H20L0 88V20Z M29 24L24 29V79L29 84H55L60 79V29L55 24Z'}
+    word=''
+    for i,ch in enumerate('BECKO'):
+        word+=f'<path d="{glyphs[ch]}" transform="translate({i*105} 0)" fill-rule="evenodd"/>'
+    body='<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#8790FF" stroke-opacity=".07"/></pattern></defs><rect width="1200" height="420" fill="url(#grid)"/>'
+    body+='<path d="M0 365H730L790 305H1200M0 372H730L790 312H1200" fill="none" stroke="#F34EC4" opacity=".4"/>'
+    body+=text(42,45,'BECKO / PERSONAL INTERFACE',15,'mono')+text(1155,45,'UZB · 1602',15,'accent','text-anchor="end"')
+    body+='<g transform="translate(44 100) scale(1.48)" fill="#F2F4FF">'+word+'</g><path d="M44 282H206L221 267H815" fill="none" stroke="#35E8EF" stroke-width="3"/>'
+    body+=text(44,328,'BEHRUZBEK BEKCHANOV',25,extra='font-weight="700" letter-spacing="4"')+text(44,365,'FULL-STACK DEVELOPER  /  AI & AUTOMATION  /  LINUX',18,'accent')
+    body+='<path d="M1000 115L1128 115V243H1000Z M1024 139H1104V219H1024Z" fill="none" stroke="#6957FF" stroke-width="2"/><path d="M984 99V75H1010M1144 99V75H1118M984 259V283H1010M1144 259V283H1118" fill="none" stroke="#F34EC4" stroke-width="3"/>'
+    body+=text(1064,191,'</>',39,'accent','text-anchor="middle"')+text(1064,319,'BUILD / SHIP / REPEAT',12,'mono','text-anchor="middle"')
+    save('hero',420,body,'BECKO — Behruzbek Bekchanov','Angular custom BECKO lettering, cyan circuits, ultraviolet and hot pink on midnight black. No snake.')
+    save('roles',78,text(32,47,'DEVELOPER',20,'accent')+text(405,47,'AI BUILDER',20,'accent')+text(830,47,'LINUX ENTHUSIAST',20,'accent'),'Developer / AI builder / Linux enthusiast')
+    items=[('html5','HTML5','#E34F26'),('css','CSS','#316BF3'),('javascript','JAVASCRIPT','#A68B12'),('typescript','TYPESCRIPT','#3178C6'),('react','REACT','#087F96'),('nextdotjs','NEXT.JS','#292C40'),('tailwindcss','TAILWIND','#078CA4'),('nodedotjs','NODE.JS','#388444'),('python','PYTHON','#376DA0'),('fastapi','FASTAPI','#008C80'),('git','GIT','#E64E36'),('github','GITHUB','#292C40'),('docker','DOCKER','#1684D1'),('linux','LINUX','#82700A'),('archlinux','ARCH LINUX','#147EAC'),('telegram','TELEGRAM','#2283B1')]
+    body=''
+    for i,(slug,label,color) in enumerate(items):
+        x=8+(i%4)*298;y=8+(i//4)*65
+        body+=f'<rect x="{x}" y="{y}" width="286" height="54" fill="{color}"/>'+logo(slug,x+14,y+13,28)+text(x+56,y+34,label,19,extra='font-weight="700" letter-spacing="2"')
+    save('tech-stack',268,body,'Tech stack','HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind, Node.js, Python, FastAPI, Git, GitHub, Docker, Linux, Arch Linux and Telegram.')
+    body=''
+    for i,(label,detail) in enumerate([('GDG EDTECH','2nd place / team'),('AIFU HACKATHON','Top 10 / team'),('BUILD IN PUBLIC','Code. Learn. Repeat.')]):
+        x=16+i*396
+        body+=panel(x,16,380,162)+text(x+22,57,'0'+str(i+1)+' / MILESTONE',14,'mono')+text(x+22,104,label,23,'accent','font-weight="700"')+text(x+22,144,detail,18,'muted')
+    save('trophies',194,body,'Hackathon highlights','GDG EdTech team second place and AIFU Top 10 team result, as recorded in the original profile. These are personal highlights, not GitHub trophies.')
+    body=text(36,56,'“Talk is cheap. Show me the code.”',30,'accent')+text(1164,101,'— Linus Torvalds',19,'muted','text-anchor="end"')
+    save('quote',132,body,'Developer quote — Linus Torvalds')
