@@ -1,6 +1,8 @@
 <picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="assets/hero-mobile-static.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-static.svg">
-  <img src="assets/hero.svg" width="100%" alt="BECKO — Behruzbek Bekchanov. Full-stack developer, AI and automation builder, Linux enthusiast.">
+  <source media="(max-width: 600px)" srcset="assets/hero-mobile.gif">
+  <img src="assets/hero.gif" width="100%" alt="BECKO — Behruzbek Bekchanov. Full-stack developer, AI and automation builder, Linux enthusiast.">
 </picture>
 
 <p align="center"><a href="#about">About</a> · <a href="#stack">Tech Stack</a> · <a href="#stats">GitHub Stats</a> · <a href="#projects">Projects</a> · <a href="#connect">Connect</a></p>
@@ -15,10 +17,20 @@ I'm **Behruzbek Bekchanov**, a full-stack developer from **Uzbekistan**. I build
 - 🐧 Daily inspiration: **Arch Linux, Hyprland and terminal workflows**.
 - ⚡ Hackathons, practical products and ideas that create opportunities in Uzbekistan.
 
+## Developer Experience
+
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/experience-mobile-static.svg">
+  <img src="assets/experience-static.svg" width="100%" alt="1+ Year — Full-Stack Development; 3+ Years — Learning Python; 2 Years — C++ Programming; React / Next.js / Node.js — Web Development; Arch Linux — Linux &amp; Terminal Workflows; AI &amp; Automation — Building Intelligent Tools.">
+</picture>
+
 <a id="stack"></a>
 ## 💻 Tech Stack
 
-<img src="assets/tech-stack.svg" width="100%" alt="Colorful technology badges: HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind, Node.js, Python, FastAPI, Git, GitHub, Docker, Linux, Arch Linux, Telegram.">
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/tech-stack-mobile-static.svg">
+  <img src="assets/tech-stack-static.svg" width="100%" alt="Technology toolkit: HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind, Node.js, Python, FastAPI, Git, GitHub, Docker, Linux, Arch Linux, Telegram.">
+</picture>
 
 <a id="stats"></a>
 ## 📊 GitHub Stats
@@ -30,9 +42,21 @@ I'm **Behruzbek Bekchanov**, a full-stack developer from **Uzbekistan**. I build
 
 <sub>Refreshed daily from GitHub. Language shares are based on source bytes in public repositories.</sub>
 
+### Contribution Snake
+
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/contribution-snake-static.svg">
+  <img src="assets/contribution-snake.gif" width="100%" alt="Demo animation: a green snake collects food on a rectangular contribution-style grid. Synthetic data; not actual GitHub activity.">
+</picture>
+
+<sub>Visual demo with synthetic cells — independent of the real GitHub statistics above.</sub>
+
 ## 🏆 Hackathon Highlights
 
-<img src="assets/trophies.svg" width="100%" alt="GDG EdTech: team second place. AIFU: Top 10 team. Building in public.">
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/trophies-mobile-static.svg">
+  <img src="assets/trophies-static.svg" width="100%" alt="GDG EdTech: team second place. AIFU: Top 10 team. Building in public.">
+</picture>
 
 ## ✍️ Dev Quote
 

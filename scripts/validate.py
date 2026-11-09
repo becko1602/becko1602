@@ -33,6 +33,23 @@ for name in ['hero','tech-stack']:
     assert not re.search(r'#(?:FF1744|B90027|00BFFF)',(R/f'assets/{name}.svg').read_text(),re.I)
 print('PASS: KAIST removed; updated artwork uses the new palette.')
 
-assert "snake" not in readme.lower()
+assert "Synthetic" in (R/"assets/contribution-snake.svg").read_text()
+assert "Visual demo with synthetic cells" in readme
 assert all(word in readme for word in ["About Me", "Tech Stack", "GitHub Stats", "Hackathon Highlights", "Dev Quote"])
-print("PASS: reference-style sections and snake-free README.")
+print("PASS: preserved profile sections and clearly labeled demo snake.")
+
+from PIL import Image
+for name in ['hero', 'contribution-snake']:
+    with Image.open(R/f'assets/{name}.gif') as im:
+        assert im.n_frames > 1 and im.info.get('loop') == 0, name
+        assert im.size[0] == 1200, name
+    assert (R/f'assets/{name}-static.svg').exists()
+    assert f'src="assets/{name}.gif"' in readme
+    assert (R/f'assets/{name}.gif').stat().st_size < 2_000_000
+# Every original external destination is preserved, including attribution.
+expected = ['https://github.com/becko1602/eDoska', 'https://github.com/becko1602/Becko',
+            'https://github.com/becko1602/becko-arch-linux', 'https://github.com/MusayevDoniyor/kaizumi']
+assert all(link in readme for link in expected)
+assert not re.search(r'<(?:script|style|iframe)\b|onload=', readme, re.I)
+assert 'BECKO' in (R/'scripts/motion.py').read_text()
+print('PASS: looping GIFs, size budgets, motion alternatives, project links and README compatibility.')
